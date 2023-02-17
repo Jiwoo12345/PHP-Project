@@ -1,0 +1,12 @@
+Codes voor GitHub om de map te halen:
+Powershell openen
+typ git om het zeker te weten of het bestaat.
+git config --global user.email "Jouw email".
+git config --global user.name "Jouw naam". (// als je dit nog niet heeft gedaan)
+git clone "Kopieer de hele sitenaam waar je map is".
+
+om veranderingen naar Github te zetten:
+Powershell openen wanneer nadat je de map hebt geselecteerd.
+git add * om alles toe te voegen.
+git commit -m "iets" om geschiedenis aan te passen.
+git push om alles naar GitHub te sturen.
