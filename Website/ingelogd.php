@@ -20,7 +20,6 @@
 
 
 <?php
-
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
@@ -32,23 +31,24 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=chirpify", $username, $password);
 
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
+    echo "successfully Connected";
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
 
-$x = $conn->prepare("SELECT * FROM tweets");
+$x = $conn->prepare("SELECT * FROM users");
 
 $x->execute();
 
 $data = $x->fetchALL(PDO::FETCH_ASSOC);
-foreach ($data as $tweet) {
-    echo "<p>" . $tweet["username"] . "</p>";
-    echo "<p>" . $tweet["content"] . "</p>";
+foreach ($data as $users) {
+    echo "<p>" . $users["gebruikersnaam"] . "</p>";
+    echo "<p>" . $users["email"] . "</p>";
+    echo "<p>" . $users["wachtwoord"] . "</p>";
 
 }
-
 ?>
+
 
 </Body>
 </Html>

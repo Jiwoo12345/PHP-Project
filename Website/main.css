@@ -1,12 +1,13 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #333333;
+    background-color: gray;
 }
 
 nav {
     background-color: #212121;
     margin: 0 auto 0;
+    height: 70px;
 }
 
 ul {

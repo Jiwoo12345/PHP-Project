@@ -13,19 +13,20 @@
         <li><a href="index.php">Homepage</a></li>
         <li><a href="tweets.php">Tweets</a></li>
         <li><a href="login.php">Login</a></li>
+        <li><a href="ingelogd.php">Ingelogd</a></li>
         <li><a href="profile.php">Account</a></li>
     </ul>
 </nav>
 
 
 <form method="POST">
-    <label for="wat">wat:</label>
+    <label for="wat">Wat:</label>
     <input type="text" id="wat" name="content">
     <br>
-    <label for="username">naam:</label>
+    <label for="username">Naam:</label>
     <input type="text" id="username" name="username">
     <br>
-    <input type="submit" value="tweet">
+    <input type="submit" value="Tweet">
 </form>
 
 
@@ -47,8 +48,8 @@ if(isset($_POST["content"])){
     } catch(PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
     }
-    //"INSERT INTO tweets (content, username)
-    //VALUES('coole eerste tweet', 'marcel')"
+
+
     $x = $conn->prepare("INSERT INTO tweets (content, username)
                     VALUES('{$_POST["content"]}', '{$_POST["username"]}')");
 
