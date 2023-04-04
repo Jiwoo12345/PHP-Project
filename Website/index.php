@@ -1,7 +1,7 @@
 <!Doctype Html>
 <Html lang="en">
 <Head>
-    <Title>Tweets</Title>
+    <Title>Homepage</Title>
     <link rel="stylesheet" href="main.css">
 </Head>
 

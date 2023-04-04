@@ -19,15 +19,24 @@
 </nav>
 
 <div class="profiel-container">
-    <h1>(Naam)</h1>
+    <h2>Naam:</h2>
+    <h2>Email:</h2>
+    <h2>Wachtwoord:</h2>
     <div class="profiel">
         <img class="profiel-foto" src="images/profiel-foto.png" alt="profielfoto">
         <h2>(Profiel-foto)</h2>
     </div>
 </div>
 
-</Body>
-</Html>
+
 
 <?php
+
+echo "<p> " . $users["gebruikersnaam"] . "</p>";
+
+
+?>
+
+</Body>
+</Html>
 

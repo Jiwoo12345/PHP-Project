@@ -1,7 +1,7 @@
 <!Doctype Html>
 <Html lang="en">
 <Head>
-    <Title>Tweets</Title>
+    <Title>Ingelogd</Title>
     <link rel="stylesheet" href="main.css">
 </Head>
 
@@ -31,7 +31,7 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=chirpify", $username, $password);
 
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "successfully Connected";
+    echo "Ingelogd";
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
@@ -42,7 +42,7 @@ $x->execute();
 
 $data = $x->fetchALL(PDO::FETCH_ASSOC);
 foreach ($data as $users) {
-    echo "<p>" . $users["gebruikersnaam"] . "</p>";
+    echo "<p> " . $users["gebruikersnaam"] . "</p>";
     echo "<p>" . $users["email"] . "</p>";
     echo "<p>" . $users["wachtwoord"] . "</p>";
 

@@ -47,9 +47,9 @@ if(isset($_POST["gebruikersnaam"])){
         $conn = new PDO("mysql:host=$servername;dbname=chirpify", $username, $password);
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
+        echo "Successfully logged in";
     } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
+        echo "Failed to log in" . $e->getMessage();
     }
 
 
