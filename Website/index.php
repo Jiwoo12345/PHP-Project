@@ -1,7 +1,7 @@
 <!Doctype Html>
 <Html lang="en">
 <Head>
-    <Title>Login</Title>
+    <Title>Tweets</Title>
     <link rel="stylesheet" href="main.css">
 </Head>
 
@@ -20,16 +20,13 @@
 
 
 <form method="POST">
-    <label for="user">Gebruikersnaam:</label>
-    <input type="text" id="user" name="gebruikersnaam">
+    <label for="wat">Wat:</label>
+    <input type="text" id="wat" name="content">
     <br>
-    <label for="e-mail">Email:</label>
-    <input type="email" id="e-mail" name="email">
+    <label for="username">Naam:</label>
+    <input type="text" id="username" name="username">
     <br>
-    <label for="ww">Wachtwoord:</label>
-    <input type="password" id="ww" name="wachtwoord">
-    <br>
-    <input type="submit" value="Login">
+    <input type="submit" value="Tweet">
 </form>
 
 
@@ -38,7 +35,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-if(isset($_POST["gebruikersnaam"])){
+if(isset($_POST["content"])){
     $servername = "localhost";
     $username = "root";
     $password = "root";
@@ -53,8 +50,8 @@ if(isset($_POST["gebruikersnaam"])){
     }
 
 
-    $x = $conn->prepare("INSERT INTO users (gebruikersnaam, email, wachtwoord)
-                    VALUES('{$_POST["gebruikersnaam"]}', '{$_POST["email"]}', '{$_POST["wachtwoord"]}')");
+    $x = $conn->prepare("INSERT INTO tweets (content, username)
+                    VALUES('{$_POST["content"]}', '{$_POST["username"]}')");
 
     $x->execute();
 }
@@ -62,7 +59,3 @@ if(isset($_POST["gebruikersnaam"])){
 
 </Body>
 </Html>
-
-
-
-
