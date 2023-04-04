@@ -1,0 +1,15 @@
+.like-button{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+.dislike-button{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+.delete-button{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
