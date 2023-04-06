@@ -28,9 +28,9 @@
 <div class="Main-opmaak">
     <h1>Chirpify</h1>
     <form method="POST">
-        Text<input type="text" name="content">
+        Text: <input type="text" name="content">
         <br>
-        Naam<input type="text" name="username">
+        Naam: <input type="text" name="username">
         <input type="submit" value="Send">
         <button name="delete" class="delete-button"><i style="font-size:24px" class="fa">&#xf014;</i></button>
         <br>
