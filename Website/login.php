@@ -12,35 +12,39 @@
     <ul>
         <li><a href="index.php">Homepage</a></li>
         <li><a href="tweets.php">Tweets</a></li>
+        <li><a href="chirpify.php">Chirpify</a></li>
         <li><a href="afbeelding.php">Post Afbeelding</a></li>
         <li><a href="show_image.php">Afbeelding</a></li>
         <li><a href="login.php">Login</a></li>
         <li><a href="ingelogd.php">Ingelogd</a></li>
-        <li><a href="profile.php">Account</a></li>
+        <li><a href="profileChange.php">Profiel</a></li>
     </ul>
 </nav>
 
+<div class="Main-opmaak">
+    <h1>Login</h1>
+    <form method="POST">
+        <label for="user">Gebruikersnaam:</label>
+        <input type="text" id="user" name="gebruikersnaam">
+        <br>
+        <label for="e-mail">Email:</label>
+        <input type="email" id="e-mail" name="email">
+        <br>
+        <label for="ww">Wachtwoord:</label>
+        <input type="password" id="ww" name="wachtwoord">
+        <br>
+        <input type="submit" value="Login">
+    </form>
+</div>
 
-<form method="POST">
-    <label for="user">Gebruikersnaam:</label>
-    <input type="text" id="user" name="gebruikersnaam">
-    <br>
-    <label for="e-mail">Email:</label>
-    <input type="email" id="e-mail" name="email">
-    <br>
-    <label for="ww">Wachtwoord:</label>
-    <input type="password" id="ww" name="wachtwoord">
-    <br>
-    <input type="submit" value="Login">
-</form>
-
+<footer>© 2023 AJ</footer>
 
 <?php
 
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-if(isset($_POST["gebruikersnaam"])){
+if (isset($_POST["gebruikersnaam"])) {
     $servername = "localhost";
     $username = "root";
     $password = "root";
@@ -50,7 +54,7 @@ if(isset($_POST["gebruikersnaam"])){
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "Successfully logged in";
-    } catch(PDOException $e) {
+    } catch (PDOException $e) {
         echo "Failed to log in" . $e->getMessage();
     }
 

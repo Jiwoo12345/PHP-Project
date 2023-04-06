@@ -12,13 +12,16 @@
     <ul>
         <li><a href="index.php">Homepage</a></li>
         <li><a href="tweets.php">Tweets</a></li>
+        <li><a href="chirpify.php">Chirpify</a></li>
         <li><a href="afbeelding.php">Post Afbeelding</a></li>
         <li><a href="show_image.php">Afbeelding</a></li>
         <li><a href="login.php">Login</a></li>
         <li><a href="ingelogd.php">Ingelogd</a></li>
-        <li><a href="profile.php">Account</a></li>
+        <li><a href="profileChange.php">Profiel</a></li>
     </ul>
 </nav>
+
+<footer>© 2023 AJ</footer>
 
 
 <?php
@@ -48,7 +51,6 @@ foreach ($data as $tweet) {
     echo "<p>" . $tweet["username"] . "</p>";
     echo "<p>" . $tweet["content"] . "</p>";
 }
-
 
 
 ?>
