@@ -12,6 +12,8 @@
     <ul>
         <li><a href="index.php">Homepage</a></li>
         <li><a href="tweets.php">Tweets</a></li>
+        <li><a href="afbeelding.php">Post Afbeelding</a></li>
+        <li><a href="show_image.php">Afbeelding</a></li>
         <li><a href="login.php">Login</a></li>
         <li><a href="ingelogd.php">Ingelogd</a></li>
         <li><a href="profile.php">Account</a></li>

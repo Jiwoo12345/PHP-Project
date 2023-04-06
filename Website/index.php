@@ -1,4 +1,4 @@
-<!Doctype Html>
+<!Doctype HTML>
 <Html lang="en">
 <Head>
     <Title>Homepage</Title>
@@ -12,6 +12,8 @@
     <ul>
         <li><a href="index.php">Homepage</a></li>
         <li><a href="tweets.php">Tweets</a></li>
+        <li><a href="afbeelding.php">Post Afbeelding</a></li>
+        <li><a href="show_image.php">Afbeelding</a></li>
         <li><a href="login.php">Login</a></li>
         <li><a href="ingelogd.php">Ingelogd</a></li>
         <li><a href="profile.php">Account</a></li>
@@ -19,15 +21,17 @@
 </nav>
 
 
-<form method="POST">
+<form action="tweets.php" method="POST">
     <label for="wat">Wat:</label>
     <input type="text" id="wat" name="content">
     <br>
     <label for="username">Naam:</label>
     <input type="text" id="username" name="username">
     <br>
-    <input type="submit" value="Tweet">
+    <input type="submit" value="Tweet" name="submit">
 </form>
+
+
 
 
 <?php
@@ -42,7 +46,7 @@ if(isset($_POST["content"])){
 
     try {
         $conn = new PDO("mysql:host=$servername;dbname=chirpify", $username, $password);
-        // set the PDO error mode to exception
+
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "Connected successfully";
     } catch(PDOException $e) {
@@ -51,11 +55,18 @@ if(isset($_POST["content"])){
 
 
     $x = $conn->prepare("INSERT INTO tweets (content, username)
-                    VALUES('{$_POST["content"]}', '{$_POST["username"]}')");
+                    VALUES(:ct, :un)");
 
-    $x->execute();
+    $x->execute([
+            ":ct" => $_POST['content'],
+            ":un" => $_POST['username']
+    ]);
 }
+
+
 ?>
+
+
 
 </Body>
 </Html>

@@ -1,7 +1,7 @@
 <!Doctype Html>
 <Html lang="en">
 <Head>
-    <Title>Ingelogd</Title>
+    <Title>Tweets</Title>
     <link rel="stylesheet" href="main.css">
 </Head>
 
@@ -20,37 +20,37 @@
     </ul>
 </nav>
 
-
 <?php
+
 error_reporting(E_ALL);
-ini_set('display_errors', 'on');
+ini_set('display_errors', 'On');
+
 
 $servername = "localhost";
+$host = "localhost";
 $username = "root";
 $password = "root";
+$dbname = "chirpify";
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=chirpify", $username, $password);
+// Connect to the database
+$conn = mysqli_connect($host, $username, $password, $dbname);
 
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Ingelogd";
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+// Check for errors
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
-$x = $conn->prepare("SELECT * FROM users");
+// Retrieve the file path from the database
+$sql = "SELECT filepath FROM tweet_image WHERE id = 2";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+$filePath = $row['filepath'];
 
-$x->execute();
+// Display the image
+echo "<img src=\"$filePath\" height='200px'>";
 
-$data = $x->fetchALL(PDO::FETCH_ASSOC);
-foreach ($data as $users) {
-    echo "<p> " . $users["gebruikersnaam"] . "</p>";
-    echo "<p>" . $users["email"] . "</p>";
-    echo "<p>" . $users["wachtwoord"] . "</p>";
 
-}
 ?>
-
 
 </Body>
 </Html>
