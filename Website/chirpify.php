@@ -13,9 +13,8 @@
 <nav>
     <img class="website-logo" src="images/PHP-Project_Logo.png" alt="Logo">
     <ul>
-        <li><a href="index.php">Homepage</a></li>
+        <li><a href="chirpify.php">Homepage</a></li>
         <li><a href="tweets.php">Tweets</a></li>
-        <li><a href="chirpify.php">Chirpify</a></li>
         <li><a href="afbeelding.php">Post Afbeelding</a></li>
         <li><a href="show_image.php">Afbeelding</a></li>
         <li><a href="login.php">Login</a></li>
@@ -26,7 +25,7 @@
 
 
 <div class="Main-opmaak">
-    <h1>Chirpify</h1>
+    <h1>Tweeten</h1>
     <form method="POST">
         Text: <input type="text" name="content">
         <br>
@@ -59,23 +58,23 @@ try {
 }
 
 if (isset($_POST["content"])) {
-    $tweet_maken = $conn->prepare("INSERT INTO chirp (tweets, username)
+    $tweet_maken = $conn->prepare("INSERT INTO tweets (content, username)
                        VALUES('{$_POST["content"]}', '{$_POST["username"]}')");
     $tweet_maken->execute();
 }
 
 if (isset($_POST["like"])) {
-    $tweet_liken = "UPDATE chirp SET liken = liken + 1 WHERE id";
+    $tweet_liken = "UPDATE tweets SET liken = liken + 1 WHERE id";
     $likes_kijken = $conn->query($tweet_liken);
 }
 
 if (isset($_POST["dislike"])) {
-    $tweet_disliken = "UPDATE chirp SET disliken = disliken + 1 WHERE id";
+    $tweet_disliken = "UPDATE tweets SET disliken = disliken + 1 WHERE id";
     $dislikes_Kijken = $conn->query($tweet_disliken);
 }
 
 if (isset($_POST["delete"])) {
-    $tweet_deleten = "DELETE FROM chirp WHERE id";
+    $tweet_deleten = "DELETE FROM tweets WHERE id";
     $deletes_kijken = $conn->exec($tweet_deleten);
 }
 ?>

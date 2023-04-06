@@ -10,9 +10,8 @@
 <nav>
     <img class="website-logo" src="images/PHP-Project_Logo.png" alt="Logo">
     <ul>
-        <li><a href="index.php">Homepage</a></li>
+        <li><a href="chirpify.php">Homepage</a></li>
         <li><a href="tweets.php">Tweets</a></li>
-        <li><a href="chirpify.php">Chirpify</a></li>
         <li><a href="afbeelding.php">Post Afbeelding</a></li>
         <li><a href="show_image.php">Afbeelding</a></li>
         <li><a href="login.php">Login</a></li>
